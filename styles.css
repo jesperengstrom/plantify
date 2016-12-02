@@ -1,0 +1,289 @@
+/* Jesper Engström FEND16
+
+sätter lite grundvärden på html o body, tar bort marginaler mm*/
+
+html, 
+body {
+	width: 100%;
+	height:100%;
+	min-height: 100%;
+	margin:0;
+	padding:0;
+	position:absolute;
+	font-size: 14px;
+}
+
+body {
+	box-sizing: border-box;
+	font-family: 'Didact Gothic', sans-serif;
+	background: #aedcd7;
+	overflow-y: scroll;
+	background-size: cover; 
+}
+
+/* tar bort defaultutseendet för länkar och lägger till en liten effekt på dem i menyn mm*/
+
+a {
+	text-decoration: none;
+	color:#000;
+}
+
+.navlinks a:hover, 
+.body-text a:hover {
+	border-bottom: 3px solid #e65f68;
+}
+
+/* två bakgrundsbilder som länkas till bodyn på olika sidor*/
+
+.bg-image1 {
+	background-image: url("images/plant4_green.jpg");
+}
+
+.bg-image2 {
+	background-image: url("images/plant5_green.jpg");
+}
+
+/* containerklass som samlar menyn högst upp på varje sida*/
+
+.top-navbar {
+	background: #fff;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	top:0;
+	width: 100%;
+	height: 5.5rem;
+}
+
+/* utseendet på loggan högst uppe till vänster*/
+
+.logo-top-left {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 90%;
+	margin: 0 3rem;
+	float: left;
+}
+
+.logotext {
+	font-family: 'Oleo Script', cursive;
+	font-size: 2.5rem;
+	color: #459d8d;
+	text-transform: lowercase;
+	margin: 0 1rem;
+}
+
+/* id sorry :(*/
+
+#logoimg {
+	width:50px;
+	height:59px;
+}
+
+/* props för ul-listan som utgör menyn*/
+
+.navlinks {
+	height:90%;
+	width: 75%;
+	padding: 0;
+	margin: 0;
+	white-space: nowrap;
+}
+
+/* ...och alla individuella li-element där*/
+
+.navlinks li {
+	display: inline-block;
+	list-style-type: none;
+	text-transform: uppercase;
+	font-size: 1.25rem;
+	font-weight: 700;
+	margin:1.2rem;
+	padding-top: 0.25rem;
+}
+
+/* ful-div som skapar space i menyn. används även som tomt utrymme för att lägga en linje här o där*/
+
+.separator {
+	display: inline-block;
+	width: 75%;
+	height: 1rem;
+}
+
+/* huvududblocket på sidan*/
+
+.content-box {
+	width: 75%;
+	margin: 5.5rem auto 0 auto;
+	padding: 1.5rem auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+/*props för rubrikbox o rubrik som förekommer på varje sida */
+
+.header-box {
+	margin: 2.5rem 0 1.5rem 0;
+	height: 5rem;
+}
+
+.header {
+	margin:0;
+	text-align: center;
+	font-size: 3.3rem;
+	color:#fff;
+}
+
+/* en lite mindre container som innehåller kolumnerna som sidorna består av*/
+
+.smaller-content-box{
+	margin:0;
+	width: 80%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+/* sidorna har 1, 2, eller 3 kolumner, hittade inget smartare sätt att göra det förutom flexbox o tre klasser med olika bredd*/
+
+.one-column {
+	width: 100%;
+}
+
+.two-column {
+	width: 50%;
+}
+
+.three-column {
+	width: 30%; 
+}
+
+/* den basic textboxen som används överallt*/
+
+.text-box {
+	padding: 1rem;
+	border-radius: 5px;
+	margin: 1rem;
+}
+
+/* boxar som ska ha vit text*/
+
+.text-box, 
+.table-text {
+	background: #fff;
+}
+
+/* lite olika props för olika textformaterinar. Vissa props delas av många medan andra är idndividuella, därav flera selektorer*/
+
+.body-text, 
+.table-text {
+	margin:0 1rem;
+	padding:1rem;
+	font-size: 1.4rem;
+	line-height: 2rem;
+	color: #767676;
+	margin-bottom: 0.5rem;
+}
+
+.table-text {
+	font-size: 1.25rem;
+}
+
+.plantify-text, 
+.table-head {
+	color: #459d8d;
+	font-weight: 700;
+}
+
+/* ...tex citaten som finns längst ner på varje sida*/
+
+.quote-text {
+	margin: 0;
+	font-size: 1.75rem;
+	text-align: right;
+	color: #fff;
+}
+
+.quotebox {
+	width: 75%;
+	margin-bottom:1rem;
+}
+
+/* och den röda texten här o där */
+
+.author, 
+.table-foot {
+	font-size: 1.25rem;
+	color: #e65f68;
+}
+
+/* understruken text */
+
+.underline {
+	border-bottom: 3px solid #aedcd7;
+}
+
+/* props för tabellernas element*/
+
+.table-head, 
+.table-foot, 
+.table-text {
+	padding: 0.5rem 1rem;
+}
+
+.plantify-table {
+	background:#5bb2a2; 
+}
+
+.table-head {
+	background:#aedcd7;
+	font-size: 1.40rem;
+}
+
+/* de här tre färgerna används bara en gång, på tema-sidan*/
+
+.aloha {
+	background: #acd290;
+}
+
+.sibiria {
+	background:#9a9a9a; 
+}
+
+.nordic {
+	background: #8fac94;
+}
+
+.white-text {
+	color:#fff;
+}
+
+/* props för bilderna på grundarna*/
+
+.founder-imgs {
+	margin:0;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+.founder-img {
+	width: 125px;
+	height:125px;
+	border-radius: 100%;
+	margin:0.25rem;
+}
+
+/*och knappen på kontaktsidan*/
+
+.btn {
+	background: #e65f68;
+	color:#fff;
+	border:none;
+	margin:1rem;
+	padding:1rem 2rem;
+}
+
