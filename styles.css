@@ -18,7 +18,7 @@ body {
 	font-family: 'Didact Gothic', sans-serif;
 	background: #aedcd7;
 	overflow-y: scroll;
-	background-size: cover; 
+	/* background-size: cover; */
 }
 
 /* tar bort defaultutseendet för länkar och lägger till en liten effekt på dem i menyn mm*/
@@ -26,12 +26,14 @@ body {
 a {
 	text-decoration: none;
 	color:#000;
+	transition: 0.1s;
 }
 
 .navlinks a:hover, 
 .body-text a:hover {
 	border-bottom: 3px solid #e65f68;
 }
+
 
 /* två bakgrundsbilder som länkas till bodyn på olika sidor*/
 
@@ -41,6 +43,12 @@ a {
 
 .bg-image2 {
 	background-image: url("images/plant5_green.jpg");
+}
+
+.bg-image1, 
+.bg-image2 {
+	width: 1480px;
+	height: 400px;
 }
 
 /* containerklass som samlar menyn högst upp på varje sida*/
@@ -53,6 +61,8 @@ a {
 	top:0;
 	width: 100%;
 	height: 5.5rem;
+	z-index: 9999;
+	transition: height 0.5s;
 }
 
 /* utseendet på loggan högst uppe till vänster*/
@@ -62,8 +72,7 @@ a {
 	flex-direction: row;
 	align-items: center;
 	height: 90%;
-	margin: 0 3rem;
-	float: left;
+	margin: 0 2.5vw;
 }
 
 .logotext {
@@ -74,12 +83,6 @@ a {
 	margin: 0 1rem;
 }
 
-/* id sorry :(*/
-
-#logoimg {
-	width:50px;
-	height:59px;
-}
 
 /* props för ul-listan som utgör menyn*/
 
@@ -89,51 +92,57 @@ a {
 	padding: 0;
 	margin: 0;
 	white-space: nowrap;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: nowrap;
 }
 
 /* ...och alla individuella li-element där*/
 
 .navlinks li {
-	display: inline-block;
+	display: block;
 	list-style-type: none;
 	text-transform: uppercase;
 	font-size: 1.25rem;
 	font-weight: 700;
-	margin:1.2rem;
+	margin: 1.2vw 1.2vw;
 	padding-top: 0.25rem;
 }
 
-/* ful-div som skapar space i menyn. används även som tomt utrymme för att lägga en linje här o där*/
-
-.separator {
-	display: inline-block;
-	width: 75%;
-	height: 1rem;
+#right {
+	margin-left:auto;
 }
 
 /* huvududblocket på sidan*/
 
+
 .content-box {
 	width: 75%;
-	margin: 5.5rem auto 0 auto;
+	margin-left: 10vw;
+	margin-right: 10vw;
+	margin-top: 5.5rem;
+	margin-bottom: 0;
 	padding: 1.5rem auto;
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
+	justify-content: center;
 	align-items: center;
 }
 
 /*props för rubrikbox o rubrik som förekommer på varje sida */
 
 .header-box {
-	margin: 2.5rem 0 1.5rem 0;
+	margin: 4.5rem 0 1.5rem 0;
 	height: 5rem;
 }
 
 .header {
 	margin:0;
+	white-space: nowrap;
 	text-align: center;
-	font-size: 3.3rem;
+	font-size: 3.5rem;
 	color:#fff;
 }
 
@@ -149,39 +158,54 @@ a {
 
 /* sidorna har 1, 2, eller 3 kolumner, hittade inget smartare sätt att göra det förutom flexbox o tre klasser med olika bredd*/
 
-.one-column {
-	width: 100%;
-}
 
 .two-column {
 	width: 50%;
+	display: flex;
+	flex-direction: column; 
 }
 
 .three-column {
 	width: 30%; 
+	min-width: 230px;
+	min-height: 150px;
 }
 
 /* den basic textboxen som används överallt*/
 
 .text-box {
-	padding: 1rem;
+	padding: 1rem 2rem;
 	border-radius: 5px;
 	margin: 1rem;
+	opacity: 0.80;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.5s;
+}
+
+.text-box:hover {
+	opacity: 0.99;
 }
 
 /* boxar som ska ha vit text*/
+
+.align-top {
+	align-items: flex-start;
+}
 
 .text-box, 
 .table-text {
 	background: #fff;
 }
 
+
 /* lite olika props för olika textformaterinar. Vissa props delas av många medan andra är idndividuella, därav flera selektorer*/
 
 .body-text, 
 .table-text {
 	margin:0 1rem;
-	padding:1rem;
+	padding: 0.5rem;
 	font-size: 1.4rem;
 	line-height: 2rem;
 	color: #767676;
@@ -190,7 +214,8 @@ a {
 
 .table-text {
 	font-size: 1.25rem;
-}
+	line-height: 1.5rem;
+} 
 
 .plantify-text, 
 .table-head {
@@ -223,25 +248,28 @@ a {
 /* understruken text */
 
 .underline {
+	width: 80%;
 	border-bottom: 3px solid #aedcd7;
 }
 
 /* props för tabellernas element*/
 
-.table-head, 
-.table-foot, 
 .table-text {
-	padding: 0.5rem 1rem;
+	margin: 0.5vw 1vw;
+	padding: 0.5vw 1vw;
 }
+	
 
 .plantify-table {
-	background:#5bb2a2; 
+	/*background:#5bb2a2; */
+	align-self: flex-start;
 }
 
 .table-head {
 	background:#aedcd7;
 	font-size: 1.40rem;
 }
+
 
 /* de här tre färgerna används bara en gång, på tema-sidan*/
 
@@ -261,29 +289,175 @@ a {
 	color:#fff;
 }
 
+.aloha, 
+.sibiria, 
+.nordic {
+	padding: 0.8vw;
+}
+
 /* props för bilderna på grundarna*/
 
-.founder-imgs {
-	margin:0;
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
+figure {
+	margin: autó;
+	white-space: nowrap;
 }
 
 .founder-img {
 	width: 125px;
 	height:125px;
 	border-radius: 100%;
-	margin:0.25rem;
+	margin:1vw;
 }
 
-/*och knappen på kontaktsidan*/
+/*och knappen + formulär på kontaktsidan*/
+
+textarea {
+	box-sizing: border-box;
+	width: 100%;
+}
 
 .btn {
 	background: #e65f68;
 	color:#fff;
 	border:none;
 	margin:1rem;
-	padding:1rem 2rem;
+	padding:1vw 2vw;
+	transition: .5s
 }
 
+button:hover {
+	background:#e2989b;
+}
+/* props för svg-loggan, lite animationer o grejer */
+
+svg {
+	width: 4.5em;
+	height: 4.5em;
+}
+
+svg:hover #logo-part1 {
+	fill: #6fc8b8;
+}
+
+svg:hover #logo-part2 {
+	fill: #b54a51;
+}
+
+svg:hover #logo-part3 {
+	fill: #cc535b;
+}
+
+svg:hover #logo-part4 {
+	fill: #e55f68;
+}
+
+
+#logo-part1 { 
+	transition: 1s; 
+}
+
+#logo-part2 { 
+	transition: 1.1s; 
+}
+
+#logo-part3 { 
+	transition: 1.2s; 
+}
+
+#logo-part4 { 
+	transition: 1.3s; 
+}
+
+/* media querys för responsivitet */
+
+@media (max-width: 975px) {
+
+	.smaller-content-box {
+		flex-direction: column;
+		justify-content:center;
+		align-items: center;
+	}
+
+	.two-column {
+		width: 100%
+
+	}
+
+	.text-box {
+		width: 40vw;
+		min-height: 100px;
+	}
+
+	.header-box {
+		margin-bottom: 2rem;
+		width: 90vw;
+	}
+	.header {
+		font-size: 3rem;
+		white-space: normal;
+	}
+}
+
+@media (max-width: 780px) {
+	.header {
+		font-size: 2.5rem;
+	}
+}
+
+@media (max-width: 700px) {
+
+	.navlinks {
+		flex-wrap: wrap;
+	}
+
+	.logotext {
+		display: none;
+	}
+	
+	li:first-child {
+		display: none;
+	}
+}
+
+@media (max-width: 510px) {
+	#right {
+		margin-left: 1.2vw;
+	} 
+
+	.top-navbar {
+		height: 7.5rem;
+	}
+
+	.text-box {
+		padding: 2.5vw;
+		width:75vw;
+	}
+
+	.body-text {
+		padding: 2vw;
+		margin:1.5vw;
+	}
+
+	figure {
+		white-space: normal;
+	}
+
+	.two-column .text-box {
+		padding: 2vw;
+		margin: auto;
+		margin-top: 2vw;
+		width: 100%
+	}
+}
+
+@media (max-width: 400px) {
+	.content-box {
+		width: 95%;
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+	.header {
+		font-size: 2rem;
+	}
+}
