@@ -1,0 +1,93 @@
+/* media querys för responsivitet */
+
+@media (max-width: 975px) {
+
+	.smaller-content-box {
+		flex-direction: column;
+		justify-content:center;
+		align-items: center;
+	}
+
+	.two-column {
+		width: 100%
+
+	}
+
+	.text-box {
+		width: 40vw;
+		min-height: 100px;
+	}
+
+	.header-box {
+		margin-bottom: 2rem;
+		width: 90vw;
+	}
+	.header {
+		font-size: 3rem;
+		white-space: normal;
+	}
+}
+
+@media (max-width: 780px) {
+	.header {
+		font-size: 2.5rem;
+	}
+}
+
+@media (max-width: 700px) {
+
+	.navlinks {
+		flex-wrap: wrap;
+	}
+
+	.logotext {
+		display: none;
+	}
+	
+	li:first-child {
+		display: none;
+	}
+}
+
+@media (max-width: 510px) {
+	#right {
+		margin-left: 1.2vw;
+	} 
+
+	.top-navbar {
+		height: 7.5rem;
+	}
+
+	.text-box {
+		padding: 2.5vw;
+		width:75vw;
+	}
+
+	.body-text {
+		padding: 2vw;
+		margin:1.5vw;
+	}
+
+	figure {
+		white-space: normal;
+	}
+
+	.two-column .text-box {
+		padding: 2vw;
+		margin: auto;
+		margin-top: 2vw;
+		width: 100%
+	}
+}
+
+@media (max-width: 400px) {
+	.content-box {
+		width: 95%;
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+	.header {
+		font-size: 2rem;
+	}
+}
